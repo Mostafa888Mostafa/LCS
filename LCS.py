@@ -50,3 +50,15 @@ def print_lcs(dna1, dna2):
 
     return result
 
+def compare_dna(body_dna_file, parent_dna_file, output_file):
+    with open(body_dna_file, 'r') as body_file, open(parent_dna_file, 'r') as parent_file, open(output_file, 'w') as output:
+        body_dna = body_file.readline().strip()
+        parent_dna = parent_file.readline().strip()
+        output.write("body_dna \t parent_dna \t lcs_length \t lcs_string \n")
+        output.write("-"*60 + "\n")
+        while parent_dna:
+            lcs_length, lcs_string = find_lcs(body_dna, parent_dna)
+            
+            output.write(f"{body_dna} \t {parent_dna} \t {lcs_length} \t {lcs_string}\n")
+            parent_dna = parent_file.readline().strip()
+
