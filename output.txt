@@ -1,0 +1,4 @@
+body_dna 	 parent_dna 	 lcs_length 	 lcs_string 
+------------------------------------------------------------
+BDCABACh 	 ABCBDAB 	 4 	 BCBA
+BDCABACh 	 AABCBDAAClh 	 6 	 BCBACh
