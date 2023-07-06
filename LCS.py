@@ -9,3 +9,17 @@ def find_lcs(dna1, dna2):
                 lcs[i][j] = lcs[i - 1][j - 1] + 1
             else:
                 lcs[i][j] = max(lcs[i - 1][j], lcs[i][j - 1])
+
+    result = ""
+    i, j = m, n
+    while i > 0 and j > 0:
+        if dna1[i - 1] == dna2[j - 1]:
+            result = dna1[i - 1] + result
+            i -= 1
+            j -= 1
+        elif lcs[i - 1][j] > lcs[i][j - 1]:
+            i -= 1
+        else:
+            j -= 1
+            
+    return lcs[m][n], result
