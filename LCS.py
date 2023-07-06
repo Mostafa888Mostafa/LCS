@@ -62,3 +62,12 @@ def compare_dna(body_dna_file, parent_dna_file, output_file):
             output.write(f"{body_dna} \t {parent_dna} \t {lcs_length} \t {lcs_string}\n")
             parent_dna = parent_file.readline().strip()
 
+
+def main():
+    body_dna = input('Enter body dna file name: ')
+    parent_dna = input('Enter parent dna file name: ')
+    output_file = input('Enter name of output file: ')
+    compare_dna(body_dna, parent_dna, output_file)
+
+if __name__ == '__main__':
+    main()
